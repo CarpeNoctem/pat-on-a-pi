@@ -7,7 +7,7 @@ _(Disclaimer: These scripts come with no warranty, liability, or support. They'l
 
 I'll try to add support for other radio models/sound cards soon.
 
-**How to install:**
+### How to install:
 Run the following in a terminal window on the Pi:
 
 `curl https://raw.githubusercontent.com/CarpeNoctem/pat-on-a-pi/main/setup_pat.sh |bash`
