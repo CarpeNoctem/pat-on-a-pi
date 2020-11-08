@@ -37,6 +37,12 @@ amixer -c ${CARDNUM} set PCM ${OUTPUT_VOL} > /dev/null
 ardopc > /tmp/ardopc.log &
 sleep 1;
 
+# IC-705 provides GPS on ttyACM1. TODO: This will need to be made dynamic later for other devices.
+echo 'Starting gpsd...';
+sudo service gpsd stop;
+sudo killall gpsd;
+gpsd /dev/ttyACM1;
+
 echo;
 uimode=1
 if [ "$#" -lt "1" ]; then
