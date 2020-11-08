@@ -10,6 +10,6 @@ I'll try to add support for other radio models/sound cards soon.
 ### How to install:
 Run the following in a terminal window on the Pi:
 
-`curl https://raw.githubusercontent.com/CarpeNoctem/pat-on-a-pi/main/setup_pat.sh |bash`
+`curl https://raw.githubusercontent.com/CarpeNoctem/pat-on-a-pi/gpsd_test/setup_pat.sh |bash`
 
 This will install Pat and its prerequisites, a desktop icon, and a helper script for launching rig control and an ARDOP TNC when running Pat. It will also prompt you for your grid square and Winlink credentials to put into the Pat configuration. (In the future, it may ask you to select a rig and detect USB audio interface.)
