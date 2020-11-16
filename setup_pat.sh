@@ -21,8 +21,8 @@ chmod u+x ${HOME}/bin/run_pat.sh;
 wget -O ${HOME}/Desktop/runpat.desktop https://raw.githubusercontent.com/CarpeNoctem/pat-on-a-pi/main/runpat.desktop
 
 echo;
-echo 'Installing hamlib (rigctl)...';
-sudo apt install -y libhamlib-utils;
+echo 'Installing hamlib (rigctl) and gpsd...';
+sudo apt install -y libhamlib-utils gpsd;
 
 echo;
 echo 'Downloading and installing Ardop TNC (beta)...';
