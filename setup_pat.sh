@@ -16,7 +16,7 @@ sudo apt update;
 echo;
 echo 'Downloading run helper script...';
 mkdir -p ${HOME}/bin;
-wget -O ${HOME}/bin/run_pat.sh https://raw.githubusercontent.com/CarpeNoctem/pat-on-a-pi/gpsd_test/run_pat.sh;
+wget -O ${HOME}/bin/run_pat.sh https://raw.githubusercontent.com/CarpeNoctem/pat-on-a-pi/main/run_pat.sh;
 chmod u+x ${HOME}/bin/run_pat.sh;
 wget -O ${HOME}/Desktop/runpat.desktop https://raw.githubusercontent.com/CarpeNoctem/pat-on-a-pi/main/runpat.desktop
 
