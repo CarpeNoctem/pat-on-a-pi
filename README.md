@@ -18,4 +18,5 @@ This will install Pat and its prerequisites, a desktop icon, and a helper script
 1. Add the option during setup to configure GPS as a time source (with [this script I've already written](https://raw.githubusercontent.com/CarpeNoctem/ham-utils/main/gps_time_setup.sh)).
 2. Add support for setting this up with rigs besides the IC-705.
 3. Add support for setting up and switching between multiple rigs.
+
 These and more may be tracked via this project's [issues tracker](https://github.com/CarpeNoctem/pat-on-a-pi/issues).
