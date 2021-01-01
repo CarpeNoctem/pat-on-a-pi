@@ -66,7 +66,7 @@ echo '2) No [default]';
 read -p '#? ' setup_gps_time;
 
 if [ "${setup_gps_time}" -eq "1" ]; then
-  /tmp/gps_time/setup.sh;
+  /tmp/gps_time_setup.sh;
 fi
 
 echo;
