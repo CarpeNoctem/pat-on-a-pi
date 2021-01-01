@@ -60,12 +60,8 @@ echo;
 read -p 'Enter your Grid Square: ' gridsquare;
 sed -i "s/YourGridSquareHere/${gridsquare}/" ${HOME}/.wl2k/config.json;
 
-echo 'Would you like to set up GPS as a time source? (optional, beta)';
-echo '1) Yes';
-echo '2) No [default]';
-read -p '#? ' setup_gps_time;
-
-if [ "${setup_gps_time}" -eq "1" ]; then
+read -p 'Would you like to set up GPS as a time source (optional, beta)? [y/N]: ' setup_gps_time;
+if [ "$setup_gps_time" == "y" ] || [ "$setup_gps_time" == "Y" ]; then
   /tmp/gps_time_setup.sh;
 fi
 
