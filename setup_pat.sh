@@ -14,11 +14,13 @@ sudo apt update;
 #Really, I think any packages that need to get upgraded for this will get upgraded as we install it.
 
 echo;
-echo 'Downloading run helper script...';
+echo 'Downloading run helper scripts...';
 mkdir -p ${HOME}/bin;
 wget -O ${HOME}/bin/run_pat.sh https://raw.githubusercontent.com/CarpeNoctem/pat-on-a-pi/main/run_pat.sh;
 chmod u+x ${HOME}/bin/run_pat.sh;
 wget -O ${HOME}/Desktop/runpat.desktop https://raw.githubusercontent.com/CarpeNoctem/pat-on-a-pi/main/runpat.desktop
+wget -O /tmp/gps_time_setup.sh https://raw.githubusercontent.com/CarpeNoctem/ham-utils/main/gps_time_setup.sh
+chmod u+x /tmp/gps_time_setup.sh
 
 echo;
 echo 'Installing hamlib (rigctl) and gpsd...';
@@ -57,6 +59,15 @@ echo;
 
 read -p 'Enter your Grid Square: ' gridsquare;
 sed -i "s/YourGridSquareHere/${gridsquare}/" ${HOME}/.wl2k/config.json;
+
+echo 'Would you like to set up GPS as a time source? (optional, beta)';
+echo '1) Yes';
+echo '2) No [default]';
+read -p '#? ' setup_gps_time;
+
+if [ "${setup_gps_time}" -eq "1" ]; then
+  /tmp/gps_time/setup.sh;
+fi
 
 echo;
 echo 'Congratulations, Pat has been installed and configured!';
