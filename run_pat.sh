@@ -16,7 +16,9 @@ BAUD=9600
 echo 'Initiating connection with rig...';
 rigctl -m ${RIG} -r /dev/ttyACM0 -s ${BAUD} f >/dev/null 2>&1
 if [ "$?" -ne "0" ]; then
-  echo 'Could not initiate connection with rig on /dev/ttyACM0. Quitting.';
+  echo 'Could not initiate connection with rig on /dev/ttyACM0. Is it plugged in, with the correct CI-V address set?';
+  read -p 'Hit Enter or close this terminal window.' k; #TODO: Only show these prompts when launched from desktop
+  echo 'Exiting.';
   exit;
 fi
 rigctld -m ${RIG} -r /dev/ttyACM0 -s ${BAUD} > /tmp/rigctl.log &
@@ -26,6 +28,7 @@ echo 'Initiating Ardop TNC...';
 AUDIOCARD=$(aplay -l |grep 'USB Audio CODEC' |grep -o 'card [0-9]*')
 if [ "$(echo ${AUDIOCARD} |wc -l)" -lt "1" ]; then
   echo 'Problem detecting USB audio card. Is the device plugged in?';
+  read -p 'Hit Enter or close this terminal window.' k; #TODO: Only show these prompts when launched from desktop
   echo 'Exiting.';
   exit
 fi
@@ -62,6 +65,7 @@ fi
 
 if [ "${uimode}" -eq "2" ]; then
   pat interactive;
+  read -p 'Hit Enter or close this terminal window.' k; #TODO: Only show these prompts when launched from desktop
 elif [ "${uimode}" -eq "3" ]; then
   echo -n 'Okay. ';
 else
