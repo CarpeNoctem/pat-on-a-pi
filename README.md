@@ -14,6 +14,9 @@ Run the following in a terminal window on the Pi:
 
 This will install Pat and its prerequisites, a desktop icon, and a helper script for launching rig control and an ARDOP TNC when running Pat. It will also prompt you for your grid square and Winlink credentials to put into the Pat configuration. (In the future, it may ask you to select a rig and detect USB audio interface.)
 
+**Note:** At the time of this writing the hamlib dependency doesn't know about the IC-705, but all works if you set the CI-V address of your 705 to that of the 7300: 94
+This will change in the future as hamlib and other software formal support the IC-705.
+
 ### Future changes (in chronological order)
 1. ~~Add the option during setup to configure GPS as a time source (with [this script I've already written](https://raw.githubusercontent.com/CarpeNoctem/ham-utils/main/gps_time_setup.sh)).~~
 2. Add support for setting this up with rigs besides the IC-705.
